@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  gin-backend:
+    build:
+      context: ./backend
+    container_name: gin-backend
+    ports:
+      - "8080:8080"
+    # volumes:
+    #   - ./backend:/app
+    restart: always
