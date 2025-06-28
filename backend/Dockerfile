@@ -1,16 +1,17 @@
-FROM golang:1.22-alpine
+FROM golang:1.24-alpine
 
-RUN apk add --no-cache git
+RUN apk add --no-cache git curl
 
-WORKDIR /app
+RUN go install github.com/cosmtrek/air@v1.40.4
+
+WORKDIR /main
 
 COPY go.mod go.sum ./
 RUN go mod download
 
 COPY . .
 
-RUN go build -o main .
-
 EXPOSE 8080
 
-CMD ["./main"]
+CMD ["/go/bin/air"]
+
