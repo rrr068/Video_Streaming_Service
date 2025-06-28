@@ -12,3 +12,4 @@ TODO：FlutterMobileは、別途環境構築
 ### 言語：Go、Dart
 ### フレームワーク：Gin、Flutter(mobile)
 ### 実行環境：Go(Docker)
+### 備考：Docker環境でのGoのホットリロードとして、Airの追加、Ginの中で、GORM(ORM)を追加
